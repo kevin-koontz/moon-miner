@@ -16,29 +16,79 @@
   <title>Moon-Miner</title>
 </head>
 
-<body class="bg-dark">
-  test
+<body class="background-img">
+  <header>
+    <div class="text-center m-5">
+      <h1>MOON MINER</h1>
+    </div>
+  </header>
 
+  <main>
 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center">
+            <img onclick="mine()" src="assets/img/grok-8-bit-moon-removebg.png" alt="moon-foreground" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
 
+  </main>
 
+  <footer>
 
+    <!-- SECTION game console -->
+    <div class="container-fluid">
+      <!-- ANCHOR game console playerStats -->
+      <section class="row">
+        <div class="col-md-12">
+          <div id="playerStats" class="d-flex justify-content-center align-items-end game-console-bg">
+            <div id="clickPowerLevel">
+              <h1>
+                <span>X</span>
+                <i>👆</i>
+              </h1>
+            </div>
+            <div id="cheese">
+              <h1 class="mb-0 d-flex justify-content-between">
+                <i>💎</i>
+                <span>0</span>
+              </h1>
+            </div>
+            <div class="passivePowerLevel">
+              <h1>
+                <i>⏱️</i>
+                <span>X</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ANCHOR game console playerShop -->
+      <section class="row">
+        <div class="col-md-6">
+          <!-- SECTION game console shop -->
+          <div id="playerShop">
+            <div id="clickUpgrades d-flex flex-column">
+              <h2>Click Upgrades</h2>
+              <div id="pickAxeUpgrade">
+                <span>X</span>
+                <i>💎</i>
+              </div>
+              <div id="laserAxeUpgrade">
+                <span>X</span>
+                <i>💎</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </footer>
 
   <script src="app.js"></script>
 </body>
