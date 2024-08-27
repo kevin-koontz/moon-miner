@@ -1,93 +1,143 @@
-console.log('Time to mine resources');
-
+console.log('Time to mine resources!');
 
 let resource = 0
 
-
-let activeUpgrades = [
+let clickUpgrades = [
   {
     name: 'pickaxe',
-    price: 100,
+    price: 50,
     quantity: 0,
     bonus: 1
   },
   {
-    name: 'laser',
-    price: 200,
+    name: 'laserDrill',
+    price: 250,
     quantity: 0,
-    bonus: 2
+    bonus: 5
   }
 ];
 
-let passiveUpgrades = [
+let automaticUpgrades = [
   {
     name: 'rover',
-    price: 600,
+    price: 1000,
     quantity: 0,
-    bonus: 20
+    bonus: 10
+  },
+  {
+    name: 'orbitalLaser',
+    price: 50000,
+    quantity: 0,
+    bonus: 100
   }
 ];
 
-// draw locations
-const totalResourcesElm = document.getElementById('resource')
-const pickaxeCountElm = document.getElementById('pickaxeCount')
-const activeUpgradeCountElm = document.getElementById('activeUpgradeCount')
 
-
-
-//fn runs onclick moon image, player resources increase +1 per click
-function activeResource() {
-  let totalActiveResource = resource += 10
-  console.log('activeResource collected: ', totalActiveResource)
-
-  let activeResourceElm = document.getElementById('resource')
-  activeResourceElm.innerText = totalActiveResource.toString()
-
-  return totalActiveResource
-}
-// console.log(activeResource());
-
-//fn calculate total resources, update on game console playerStats
-function drawTotalResources() {
-  let totalResources = activeResource() + passiveResource()
-  totalResourcesElm.innerText = totalResources.toString()
-  console.log(totalResources);
+function mine() {
+  resource += 1 + calculateTotalClickUpgradeBonus()
+  console.log('Base: +1 💎 per click!');
+  drawResource()
 }
 
-//fn find pickaxe data from array, check if player has 100 resources then reduce resources by price in array, increase quantity +1, else alert player not enough resources
 function buyPickaxe() {
-  let pickaxe = activeUpgrades.find(item => item.name === 'pickaxe')
+  let pickaxe = clickUpgrades.find(item => item.name === 'pickaxe')
 
   if (resource >= pickaxe.price) {
-    console.log('Pickaxe purchased!');
-
+    pickaxe.quantity++
     resource -= pickaxe.price
-    // console.log(resource);
-    pickaxe.quantity += 1
-    // console.log(pickaxe.quantity);
-
-    activeUpgradeCountElm.innerText = pickaxe.quantity.toString()
-    pickaxeCountElm.innerText = pickaxe.quantity.toString()
-    totalResourcesElm.innerText = resource.toString()
+    console.log('Pickaxe purchased!');
+    console.log('Total ⛏️: +', pickaxe.quantity);
+    // console.log('Total 💎: ', resource);
+    drawClickUpgradeBonus()
+    drawResource()
   }
   else {
-    alert('Not enough resources! Requires 💎 100')
+    alert(`Not enough resources for: ⛏️! Requires 💎: ${pickaxe.price}`)
   }
 }
 
+function buyLaserDrill() {
+  let laserDrill = clickUpgrades.find(item => item.name === 'laserDrill')
 
-function passiveResource() {
-  let totalPassiveResource = resource += (1 + (10 * 1))
-  console.log('passiveResource collected: ', totalPassiveResource);
+  if (resource >= laserDrill.price) {
+    laserDrill.quantity++
+    resource -= laserDrill.price
+    console.log('LaserDrill purchased!');
+    console.log('Total 🔫: +', laserDrill.quantity);
+    // console.log('Total 💎: ', resource);
+    drawPickaxeBonus()
+    drawClickUpgradeBonus()
+    drawResource()
+  }
+  else {
+    // Hello MICK (or possibly Jake/Jeremy), it was roughly here when everything began to click for me. Had to flex with the `${laserDrill.price}` so you will gain more confidence in me however I did not have time to refactor everything. Love, Kevin 😉
+    alert(`Not enough resources for: 🔫! Requires 💎: ${laserDrill.price}`)
+  }
+}
 
-  let passiveResourceElm = document.getElementById('passiveUpgradeCount')
-  passiveResourceElm.innerText = totalPassiveResource.toString()
+function calculatePickaxeBonus() {
+  let pickaxe = clickUpgrades.find((item) => item.name === 'pickaxe')
 
-  return totalPassiveResource
+  let pickaxeBonus = 0
+  if (pickaxe.bonus >= 1) {
+    pickaxeBonus = (pickaxe.quantity * pickaxe.bonus)
+    console.log('Pickaxe: +', pickaxeBonus, '💎 per click!');
+  }
+  return pickaxeBonus
+}
+
+function calculateLaserDrillBonus() {
+  let laserDrill = clickUpgrades.find((item) => item.name === 'laserDrill')
+
+  let laserDrillBonus = 0
+  if (laserDrill.bonus >= 5) {
+    laserDrillBonus = (laserDrill.quantity * laserDrill.bonus)
+    console.log('LaserDrill: +', laserDrillBonus, '💎 per click!');
+  }
+  else {
+    laserDrillBonus = 0
+  }
+  return laserDrillBonus
+}
+
+//Just realized I could have done all these bonus calculations in fewer functions. I swear, I do see the light! Time is against me for this brief moment. 💖 Kevin
+function calculateTotalClickUpgradeBonus() {
+  let totalClickUpgradeBonus = calculatePickaxeBonus() + calculateLaserDrillBonus()
+  console.log('Total Click Upgrade Bonus: +', totalClickUpgradeBonus, '💎 per click!');
+  return totalClickUpgradeBonus
+}
+
+function drawPickaxeBonus() {
+  let drawTotalPickaxeBonus = calculatePickaxeBonus()
+
+  let totalPickaxeElm = document.getElementById('pickaxeUpgrades')
+  totalPickaxeElm.innerText = drawTotalPickaxeBonus.toString()
+
+}
+
+function drawClickUpgradeBonus() {
+  let drawTotalClickUpgradeBonus = calculateTotalClickUpgradeBonus()
+
+  let totalDrawElm = document.getElementById('clickUpgrades')
+  totalDrawElm.innerText = drawTotalClickUpgradeBonus.toString()
+
+}
+
+function drawClickUpgradeBonus() {
+  let drawTotalClickUpgradeBonus = 1 + calculateTotalClickUpgradeBonus()
+
+  let totalDrawElm = document.getElementById('clickUpgrades')
+  totalDrawElm.innerText = drawTotalClickUpgradeBonus.toString()
+
+}
+
+
+function drawResource() {
+  let totalElm = document.getElementById('resource')
+  totalElm.innerText = resource.toString()
 }
 
 
 
 
 
-// setInterval(passiveResource, 3000);

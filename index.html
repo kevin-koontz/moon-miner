@@ -29,8 +29,7 @@
       <div class="row">
         <div class="col-12">
           <div class="text-center">
-            <img onclick="activeResource()" src="assets/img/grok-8-bit-moon-removebg.png" alt="moon-foreground"
-              class="img-fluid">
+            <img onclick="mine()" src="assets/img/grok-8-bit-moon-removebg.png" alt="moon-foreground" class="img-fluid">
           </div>
         </div>
       </div>
@@ -45,10 +44,10 @@
       <!-- ANCHOR game console playerStats -->
       <section class="row">
         <div class="col-12">
-          <div id="playerStats" class="d-flex justify-content-center align-items-end">
-            <div id="clickPowerLevel">
+          <div class="d-flex justify-content-center align-items-end">
+            <div>
               <h1 class="mb-0 d-flex">
-                +<span id="activeUpgradeCount">0</span>
+                +<span id="clickUpgrades">1</span>
                 <i>👆</i>
               </h1>
             </div>
@@ -58,10 +57,10 @@
                 <span>0</span>
               </div>
             </h1>
-            <div class="passivePowerLevel">
+            <div>
               <h1 class="mb-0 d-flex">
                 <i>⏱️</i>
-                +<span id="passiveUpgradeCount">0</span>
+                +<span id="">0</span>
               </h1>
             </div>
           </div>
@@ -71,7 +70,7 @@
       <!-- ANCHOR game console playerShop -->
       <section class="row">
         <div class="col-12">
-          <div id="playerShop" class="p-3 m-3">
+          <div class="p-3 m-3">
             <div class="container-fluid">
               <section class="row">
                 <div class="col-md-6">
@@ -80,15 +79,15 @@
                     <div>
                       <!-- SECTION contains click upgrades -->
                       <h2>Click Upgrades</h2>
-                      <div id="clickPowerUps">
+                      <div>
                         <div class="d-flex">
-                          <button onclick="buyPickaxe()" class="btn btn-primary w-25">100
+                          <button onclick="buyPickaxe()" class="btn btn-primary w-25">50
                             <span>💎</span></button>
-                          <p>Pick Axe: +<span id="pickaxeCount">0</span></p>
+                          <p>Pick Axe: +<span id="pickaxeUpgrades">0</span></p>
                         </div>
                         <div class="d-flex">
                           <button onclick="" class="btn btn-primary w-25">X <span>💎</span></button>
-                          <p>Laser: <span>X</span></p>
+                          <p>Laser: +<span id="">0</span></p>
                         </div>
                       </div>
                     </div>
