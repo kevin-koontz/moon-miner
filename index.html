@@ -60,7 +60,7 @@
             <div>
               <h1 class="mb-0 d-flex">
                 <i>⏱️</i>
-                +<span id="">0</span>
+                +<span id="autoUpgrades">0</span>
               </h1>
             </div>
           </div>
@@ -81,14 +81,14 @@
                   <div class="border border-light p-1 m-2">
                     <div class="">
                       <div class="d-flex flex-column justify-content-center align-items-center">
-                        <button onclick="buyPickaxe()" class="btn btn-primary w-50 m-1">Pickaxe: 50
+                        <button onclick="buyPickaxe()" class="btn btn-primary w-75 m-1">Pickaxe: 50
                           <span>💎</span></button>
-                        <p class="m-0">Pickaxe: +<span id="">0</span></p>
+                        <!-- <p class="m-0">Pickaxe: +<span id="">0</span></p> -->
                       </div>
                       <div class="d-flex flex-column justify-content-center align-items-center">
-                        <button onclick=" buyLaserDrill()" class="btn btn-success w-50 m-1">Laser Drill:
+                        <button onclick=" buyLaserDrill()" class="btn btn-success w-75 m-1">Laser Drill:
                           250<span>💎</span></button>
-                        <p class="m-0">Laser: +<span id="">0</span></p>
+                        <!-- <p class="m-0">Laser: +<span id="">0</span></p> -->
                       </div>
                     </div>
                   </div>
@@ -96,14 +96,14 @@
                   <div class="border border-light p-1 m-2">
                     <div class="">
                       <div class="d-flex flex-column justify-content-center align-items-center">
-                        <button onclick="buyPickaxe()" class="btn btn-primary w-50 m-1">Rover: 1000
+                        <button onclick="buyRover()" class="btn btn-primary w-75 m-1">Rover: 1000
                           <span>💎</span></button>
-                        <p class="m-0">Rover: +<span id="">0</span></p>
+                        <!-- <p class="m-0">Rover: +<span id="">0</span></p> -->
                       </div>
                       <div class="d-flex flex-column justify-content-center align-items-center">
-                        <button onclick=" buyLaserDrill()" class="btn btn-success w-50 m-1">Orbital Laser:
+                        <button onclick=" buyOrbitalLaser()" class="btn btn-success w-75 m-1">Orbital Laser:
                           50000<span>💎</span></button>
-                        <p class="m-0">Orbital Laser: +<span id="">0</span></p>
+                        <!-- <p class="m-0">Orbital Laser: +<span id="">0</span></p> -->
                       </div>
                     </div>
                   </div>
@@ -125,8 +125,8 @@
                   </div>
 
                   <div class="d-flex flex-wrap justify-content-around">
-                    <p class="m-0">Pickaxe Purchased: +<span id="pickaxeTotal">0</span></p>
-                    <p class="m-0">Laser Drill Purchased: +<span id="laserDrillTotal">0</span></p>
+                    <p class="m-0">Pickaxe Purchased: +<span id="pickaxePurchased">0</span></p>
+                    <p class="m-0">Laser Drill Purchased: +<span id="laserDrillPurchased">0</span></p>
                   </div>
                 </div>
 
@@ -137,7 +137,7 @@
 
                 <!-- contains automatic stats -->
                 <div class="d-flex flex-wrap justify-content-center">
-                  <h3>THE BEST AUTOMATIC STATS</h3>
+                  <h3>THE BEST AUTO STATS</h3>
                 </div>
 
                 <div class="border border-light p-2">
@@ -147,8 +147,8 @@
                   </div>
 
                   <div class="d-flex flex-wrap justify-content-around">
-                    <p class="m-0">Rover Purchased: +<span id="roverTotal">0</span></p>
-                    <p class="m-0">Orbital Laser Purchased: +<span id="orbitalLaserTotal">0</span></p>
+                    <p class="m-0">Rover Purchased: +<span id="roverPurchased">0</span></p>
+                    <p class="m-0">Orbital Laser Purchased: +<span id="orbitalLaserPurchased">0</span></p>
                   </div>
                 </div>
 
