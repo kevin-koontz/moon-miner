@@ -69,63 +69,121 @@
 
       <!-- ANCHOR game console playerShop -->
       <section class="row">
-        <div class="col-12">
-          <div class="p-3 m-3">
-            <div class="container-fluid">
-              <section class="row">
-                <div class="col-md-6">
-                  <!-- game console playerPurchasePowerUps -->
-                  <div class="d-block d-md-flex">
+        <div class="col-12 bg-dark p-3">
+          <div class="container-fluid">
+            <section class="row">
+
+              <div class="col-12 col-md-4">
+                <!-- game console playerPurchasePowerUps -->
+                <div class="">
+                  <h1>THE BEST SHOP</h1>
+                  <div>
+                    <!-- SECTION contains click upgrades -->
+                    <h4>Click Upgrades</h4>
                     <div>
-                      <!-- SECTION contains click upgrades -->
-                      <h2>Click Upgrades</h2>
+                      <div class="d-flex">
+                        <button onclick="buyPickaxe()" class="btn btn-primary w-25 m-1">50
+                          <span>💎</span></button>
+                        <p>Pickaxe: +<span id="">0</span></p>
+                      </div>
+                      <div class="d-flex">
+                        <button onclick="buyLaserDrill()" class="btn btn-success w-25 m-1">250<span>💎</span></button>
+                        <p>Laser: +<span id="">0</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <!-- SECTION contains automatic upgrades -->
+                      <h4>Automatic Upgrades</h4>
                       <div>
                         <div class="d-flex">
-                          <button onclick="buyPickaxe()" class="btn btn-primary w-25">50
+                          <button onclick="" class="btn btn-primary w-25 m-1">1000
                             <span>💎</span></button>
-                          <p>Pick Axe: +<span id="">0</span></p>
+                          <p>Rover: +<span id="">0</span></p>
                         </div>
                         <div class="d-flex">
-                          <button onclick="buyLaserDrill()" class="btn btn-primary w-25">250<span>💎</span></button>
-                          <p>Laser: +<span id="">0</span></p>
+                          <button onclick="" class="btn btn-success  w-25 m-1">50000<span>💎</span></button>
+                          <p>Orbital Laser: +<span id="">0</span></p>
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <!-- SECTION contains click stats -->
-                      <h2>Click Stats</h2>
-                      <div>
-                        <div class="d-flex">
-                          <button onclick="buyPickaxe()" class="btn btn-primary w-25">50
-                            <span>💎</span></button>
-                          <p>Pick Axe: +<span id="pickaxeUpgrades">0</span></p>
-                        </div>
-                        <div class="d-flex">
-                          <button onclick="buyLaserDrill()" class="btn btn-primary w-25">250<span>💎</span></button>
-                          <p>Laser: +<span id="laserDrillUpgrades">0</span></p>
-                        </div>
-                      </div>
-                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- game console player stats tracker -->
+              <div class="col-12 col-md-4">
+
+                <!-- contains click stats -->
+                <div class="d-flex flex-wrap justify-content-center">
+                  <h1>THE BEST CLICK STATS</h1>
+                </div>
+
+                <div class="border border-light p-2">
+                  <div class="d-flex flex-wrap justify-content-around">
+                    <p class="m-0">Pickaxe Purchased: +<span id="pickaxeTotal">0</span></p>
+                    <p class="m-0">Laser Drill Purchased: +<span id="laserDrillTotal">0</span></p>
+                  </div>
+
+                  <div class="d-flex flex-wrap justify-content-around">
+                    <p class="m-0">Pickaxe Click Bonus: +<span id="pickaxeBonus">0</span></p>
+                    <p class="m-0">Laser Drill Click Bonus: +<span id="laserDrillBonus">0</span></p>
+                  </div>
+                </div>
 
 
-                    <!-- SECTION game console playerDisplayPowerUps-->
-                    <!-- </div>
-                  <div id="clickUpgrades d-flex flex-column">
-                    <h2>Click Upgrades</h2>
-                    <div id="pickAxeUpgrade">
-                      <span>X</span>
-                      <i>💎</i>
-                    </div>
-                    <div id="laserAxeUpgrade">
-                      <span>X</span>
-                      <i>💎</i>
-                    </div>
-                  </div> -->
+              </div>
+
+              <div class="col-12 col-md-4">
+
+                <!-- contains click stats -->
+                <div class="d-flex flex-wrap justify-content-center">
+                  <h1>THE BEST AUTOMATIC STATS</h1>
+                </div>
+
+                <div class="border border-light p-2">
+                  <div class="d-flex flex-wrap justify-content-around">
+                    <p class="m-0">Rover Purchased: +<span id="roverTotal">0</span></p>
+                    <p class="m-0">Laser Drill Purchased: +<span id="orbitalLaserTotal">0</span></p>
                   </div>
-                  <div class="col-lg-6">
+
+                  <div class="d-flex flex-wrap justify-content-around">
+                    <p class="m-0">Rover Click Bonus: +<span id="roverBonus">0</span></p>
+                    <p class="m-0">Laser Drill Click Bonus: +<span id="orbitalLaserBonus">0</span></p>
                   </div>
-              </section>
-            </div>
+                </div>
+
+
+              </div>
+
+
+
+              <!-- <div class="col-12 col-md-4">
+                <div class="">
+                  <h1>THE BEST AUTOMATIC STATS</h1>
+                  SECTION contains automatic stats
+                  <h4>AUTOMATIC STATS</h4>
+                  <div>
+                    <div class="">
+                      <p>Rover Total Purchased: +<span id="">0</span></p>
+                    </div>
+                    <div class="">
+                      <p>Orbital Laser Total Purchased: +<span id="">0</span></p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="">
+                      <p>Rover Total Click Bonus: +<span id="pickaxeBonus">0</span></p>
+                    </div>
+                    <div class="">
+                      <p>Orbital Laser Total Click Bonus: +<span id="laserDrillBonus">0</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div> -->
+
+            </section>
           </div>
         </div>
       </section>

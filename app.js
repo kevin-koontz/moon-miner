@@ -98,7 +98,7 @@ function calculateLaserDrillBonus() {
   return laserDrillBonus
 }
 
-//Just realized I could have done all these bonus calculations in fewer functions. I swear, I do see the light! Time is against me for this brief moment. 💖 Kevin
+//Just realized I could have done all these bonus calculations in fewer functions. I do see the light, it's so BRIGHT! Time is against me for this brief moment. 💖 Kevin
 function calculateTotalClickUpgradeBonus() {
   let totalClickUpgradeBonus = calculatePickaxeBonus() + calculateLaserDrillBonus()
   console.log('Total Click Upgrade Bonus: +', totalClickUpgradeBonus, '💎 per click!');
@@ -108,7 +108,7 @@ function calculateTotalClickUpgradeBonus() {
 function drawPickaxeBonus() {
   let drawTotalPickaxeBonus = calculatePickaxeBonus()
 
-  let totalPickaxeElm = document.getElementById('pickaxeUpgrades')
+  let totalPickaxeElm = document.getElementById('pickaxeBonus')
   totalPickaxeElm.innerText = drawTotalPickaxeBonus.toString()
 
 }
@@ -116,7 +116,7 @@ function drawPickaxeBonus() {
 function drawLaserDrillBonus() {
   let drawTotalLaserDrillBonus = calculateLaserDrillBonus()
 
-  let totalDrawElm = document.getElementById('laserDrillUpgrades')
+  let totalDrawElm = document.getElementById('laserDrillBonus')
   totalDrawElm.innerText = drawTotalLaserDrillBonus.toString()
 
 }
