@@ -48,6 +48,7 @@ function buyPickaxe() {
     console.log('Pickaxe purchased!');
     console.log('Total ⛏️: +', pickaxe.quantity);
     // console.log('Total 💎: ', resource);
+    drawPickaxeBonus()
     drawClickUpgradeBonus()
     drawResource()
   }
@@ -65,12 +66,12 @@ function buyLaserDrill() {
     console.log('LaserDrill purchased!');
     console.log('Total 🔫: +', laserDrill.quantity);
     // console.log('Total 💎: ', resource);
-    drawPickaxeBonus()
+    drawLaserDrillBonus()
     drawClickUpgradeBonus()
     drawResource()
   }
   else {
-    // Hello MICK (or possibly Jake/Jeremy), it was roughly here when everything began to click for me. Had to flex with the `${laserDrill.price}` so you will gain more confidence in me however I did not have time to refactor everything. Love, Kevin 😉
+    // Hello MICK (or possibly Jake/Jeremy), it was roughly here when everything began to click for me. Had to flex with the `${laserDrill.price}` so you will gain more confidence in me! 😁 Unfortunately, I did not have time to refactor everything. Love, Kevin 😉
     alert(`Not enough resources for: 🔫! Requires 💎: ${laserDrill.price}`)
   }
 }
@@ -94,9 +95,6 @@ function calculateLaserDrillBonus() {
     laserDrillBonus = (laserDrill.quantity * laserDrill.bonus)
     console.log('LaserDrill: +', laserDrillBonus, '💎 per click!');
   }
-  else {
-    laserDrillBonus = 0
-  }
   return laserDrillBonus
 }
 
@@ -115,11 +113,11 @@ function drawPickaxeBonus() {
 
 }
 
-function drawClickUpgradeBonus() {
-  let drawTotalClickUpgradeBonus = calculateTotalClickUpgradeBonus()
+function drawLaserDrillBonus() {
+  let drawTotalLaserDrillBonus = calculateLaserDrillBonus()
 
-  let totalDrawElm = document.getElementById('clickUpgrades')
-  totalDrawElm.innerText = drawTotalClickUpgradeBonus.toString()
+  let totalDrawElm = document.getElementById('laserDrillUpgrades')
+  totalDrawElm.innerText = drawTotalLaserDrillBonus.toString()
 
 }
 
